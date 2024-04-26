@@ -1,0 +1,14 @@
+{
+  "name": "competence-assessment-tool-back",
+  "version": "1.0.0",
+  "description": "Competence Assessment Tool",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yaroslav Davydchuk",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
