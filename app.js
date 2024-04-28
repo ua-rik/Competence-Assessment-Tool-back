@@ -1,23 +1,21 @@
 const express = require('express');
 
+const participantRouter = require('./routes/participantRoutes')
+
 const app = express();
 
-app.use(express.json())
-// app.get('/', (req, res) => {
-//     res.status(200).send('Hello World!');
-// })
 
+// middlewares
+app.use(express.json());
 
-app.get('/api/v1/participants', (req, res) => {
-
+app.use((req, res, next) => {
+    req.requestTime = new Date().toISOString();
+    next();
 })
 
-app.post('/api/v1/participants', (req, res) => {
-    console.log(req.body)
-})
+// routes
+app.use('/api/vi/participants', participantRouter);
 
 
-const port = 3000;
-app.listen(port, () => {
-    console.log(`App running on port ${port}`);
-})
+// start server
+module.exports = app;
